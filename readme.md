@@ -4,8 +4,8 @@
 
 Reqiured:
 
-php > 7.2
-composer
+* php > 7.2
+* composer
 
 
 1. Clone repo
