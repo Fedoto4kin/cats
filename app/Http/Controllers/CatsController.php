@@ -20,7 +20,7 @@ class CatsController extends Controller
     public function index(Generator $faker)
     {
         $strayCats = collect();
-        foreach (range(0,11) as $i) {
+        foreach (range(0,8) as $i) {
 
             $strayCats[$i] = new Cat(
                 [

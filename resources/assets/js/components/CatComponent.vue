@@ -5,7 +5,7 @@
     class="mb-2"
     :img-src="image"  >
     <b-button @click="adopt" size="sm"  v-if="!home" class="pull-right">Adopt</b-button>
-    <b-button @click="pet" size="sm"  v-if="home" class="pull-right">Pet the cat</b-button>
+    <b-button @click="pet" size="sm" variant="outline-primary" v-if="home" class="pull-right">Pet the cat</b-button>
 
   </b-card>
 </template>

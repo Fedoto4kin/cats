@@ -18,6 +18,7 @@ Reqiured:
 ### ToDo
 
 1. limit for adopted cats
-2. Docker-compose (+redis)
-3. save adopted cats
-4. Authorisation
+2. allow to rename adopted cat
+3. Docker-compose (+redis)
+4. save adopted cats
+5. Authorisation
