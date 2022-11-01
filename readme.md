@@ -17,6 +17,7 @@ composer
 
 ### ToDo
 
-1. Docker-compose
-2. Save cats in DB with user
-3. Authorisation
+1. Play purr sound
+2. Docker-compose
+3. Save cats in DB with user
+4. Authorisation
