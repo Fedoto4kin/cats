@@ -24,8 +24,9 @@ class CatsController extends Controller
 
             $strayCats[$i] = new Cat(
                 [
-                 'name' => $faker->firstName(),
-                 'pic_id' => rand(1, 9)
+                    'uuid' => $faker->uuid,
+                    'name' => $faker->firstName(),
+                    'pic_id' => rand(1, 9)
                 ]
             );
         }
@@ -42,6 +43,7 @@ class CatsController extends Controller
      */
     public function create(Generator $faker, Cat $cat)
     {
+        $cat->uuid = $faker->uuid;
         $cat->name = $faker->firstName();
         $cat->pic_id = rand(1, 9);
         $cat->save();
@@ -59,11 +61,11 @@ class CatsController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $cat = Cat::findOrFail($id);
-         $cat->name = $request->name;
-         $cat->save();
+        $cat = Cat::findOrFail($id);
+        $cat->name = $request->name;
+        $cat->save();
 
-         return response(null, Response::HTTP_OK);
+        return response(null, Response::HTTP_OK);
     }
 
     /**

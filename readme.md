@@ -15,3 +15,8 @@ composer
    3. `artisan key:generate`
    4. `./artisan serve`
 
+### ToDo
+
+1. Docker-compose
+2. Save cats in DB with user
+3. Authorisation

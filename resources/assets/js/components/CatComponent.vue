@@ -4,7 +4,9 @@
     style="max-width: 11rem;"
     class="mb-2"
     :img-src="image"  >
-    <b-button @click="adopt"  size="sm" class="pull-right">Adopt</b-button>
+    <b-button @click="adopt" size="sm"  v-if="!home" class="pull-right">Adopt</b-button>
+    <b-button @click="pet" size="sm"  v-if="home" class="pull-right">Pet the cat</b-button>
+
   </b-card>
 </template>
 <script>
@@ -19,11 +21,13 @@
         this.$emit('update', this.id, val.target.selectedOptions[0].value);
       },
       adopt() {
-        console.log(this)
-        //this.$emit('delete', this.id);
+        this.$emit('adopt', this);
+      },
+      pet() {
+        this.$emit('pet', this);
       }
     },
-    props: ['id', 'name', 'pic']
+    props: ['uuid', 'name', 'pic', 'home']
   }
 </script>
 <style>

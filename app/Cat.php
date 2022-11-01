@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cat extends Model
 {
-    protected $fillable = ['name', 'pic_id'];
+    protected $fillable = ['name', 'pic_id', 'uuid'];
     protected $appends = ['pic'];
 
     public function getPicAttribute()
