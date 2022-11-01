@@ -17,7 +17,7 @@ Reqiured:
 
 ### ToDo
 
-1. Play purr sound
-2. Docker-compose
-3. Save cats in DB with user
+1. limit for adopted cats
+2. Docker-compose (+redis)
+3. save adopted cats
 4. Authorisation

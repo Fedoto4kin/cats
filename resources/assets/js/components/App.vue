@@ -6,7 +6,7 @@
 
         <div class="col-6">
           <div class="heading my-5">
-            <h2>Stray Cats <b-button size="lg" @click="read">SHUFFLE</b-button></h2>
+            <h2>Stray Cats <b-button @click="read">SHUFFLE</b-button></h2>
           </div>
 
           <div class="row" >
@@ -28,7 +28,7 @@
                 v-for="cat in cats"
                 v-bind="cat"
                 :key="cat.uuid"
-                @delete="del"
+                @pet="pet"
             ></cat-component>
           </div>
         </div>
@@ -78,25 +78,23 @@ export default {
       let i = this.strayCats.map(item => item.uuid).indexOf(cat.uuid)
       this.cats.push(
           new Cat({
-                  'uuid': cat.uuid,
-                  'name': cat.name,
-                  'pic': cat.pic,
-                  'home': true
+            'uuid': cat.uuid,
+            'name': cat.name,
+            'pic': cat.pic,
+            'home': true
           })
       );
       this.strayCats.splice(i, 1);
-      console.log(this.strayCats);
       //  this.saveCats();
 
     },
     saveCats() {
-      const parsed = JSON.stringify(this.cats);
-      localStorage.setItem('cats', parsed);
-      console.log(this.cats);
+      //todo: save
     },
-    async del(id) {
-      // To do
-    }
+    pet() {
+      var audio = new Audio('sounds/purring.wav');
+      audio.play();
+    },
   },
   created() {
     this.read();
